@@ -108,7 +108,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(612, 507);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(610, 505);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // pic33
@@ -116,7 +116,7 @@
             this.pic33.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic33.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic33.Location = new System.Drawing.Point(411, 341);
+            this.pic33.Location = new System.Drawing.Point(409, 339);
             this.pic33.Name = "pic33";
             this.pic33.Size = new System.Drawing.Size(198, 163);
             this.pic33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -129,9 +129,9 @@
             this.pic32.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic32.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic32.Location = new System.Drawing.Point(207, 341);
+            this.pic32.Location = new System.Drawing.Point(206, 339);
             this.pic32.Name = "pic32";
-            this.pic32.Size = new System.Drawing.Size(198, 163);
+            this.pic32.Size = new System.Drawing.Size(197, 163);
             this.pic32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic32.TabIndex = 8;
             this.pic32.TabStop = false;
@@ -142,9 +142,9 @@
             this.pic31.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic31.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic31.Location = new System.Drawing.Point(3, 341);
+            this.pic31.Location = new System.Drawing.Point(3, 339);
             this.pic31.Name = "pic31";
-            this.pic31.Size = new System.Drawing.Size(198, 163);
+            this.pic31.Size = new System.Drawing.Size(197, 163);
             this.pic31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic31.TabIndex = 7;
             this.pic31.TabStop = false;
@@ -155,9 +155,9 @@
             this.pic23.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic23.Location = new System.Drawing.Point(411, 172);
+            this.pic23.Location = new System.Drawing.Point(409, 171);
             this.pic23.Name = "pic23";
-            this.pic23.Size = new System.Drawing.Size(198, 163);
+            this.pic23.Size = new System.Drawing.Size(198, 162);
             this.pic23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic23.TabIndex = 6;
             this.pic23.TabStop = false;
@@ -168,9 +168,9 @@
             this.pic22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic22.Location = new System.Drawing.Point(207, 172);
+            this.pic22.Location = new System.Drawing.Point(206, 171);
             this.pic22.Name = "pic22";
-            this.pic22.Size = new System.Drawing.Size(198, 163);
+            this.pic22.Size = new System.Drawing.Size(197, 162);
             this.pic22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic22.TabIndex = 5;
             this.pic22.TabStop = false;
@@ -181,9 +181,9 @@
             this.pic21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic21.Location = new System.Drawing.Point(3, 172);
+            this.pic21.Location = new System.Drawing.Point(3, 171);
             this.pic21.Name = "pic21";
-            this.pic21.Size = new System.Drawing.Size(198, 163);
+            this.pic21.Size = new System.Drawing.Size(197, 162);
             this.pic21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic21.TabIndex = 4;
             this.pic21.TabStop = false;
@@ -194,9 +194,9 @@
             this.pic13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic13.Location = new System.Drawing.Point(411, 3);
+            this.pic13.Location = new System.Drawing.Point(409, 3);
             this.pic13.Name = "pic13";
-            this.pic13.Size = new System.Drawing.Size(198, 163);
+            this.pic13.Size = new System.Drawing.Size(198, 162);
             this.pic13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic13.TabIndex = 3;
             this.pic13.TabStop = false;
@@ -209,7 +209,7 @@
             this.pic11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pic11.Location = new System.Drawing.Point(3, 3);
             this.pic11.Name = "pic11";
-            this.pic11.Size = new System.Drawing.Size(198, 163);
+            this.pic11.Size = new System.Drawing.Size(197, 162);
             this.pic11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic11.TabIndex = 2;
             this.pic11.TabStop = false;
@@ -220,9 +220,9 @@
             this.pic12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic12.Location = new System.Drawing.Point(207, 3);
+            this.pic12.Location = new System.Drawing.Point(206, 3);
             this.pic12.Name = "pic12";
-            this.pic12.Size = new System.Drawing.Size(198, 163);
+            this.pic12.Size = new System.Drawing.Size(197, 162);
             this.pic12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic12.TabIndex = 1;
             this.pic12.TabStop = false;
@@ -230,6 +230,7 @@
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
@@ -250,10 +251,10 @@
             this.bigMessageLabel.AutoEllipsis = true;
             this.bigMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bigMessageLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigMessageLabel.Location = new System.Drawing.Point(3, 253);
+            this.bigMessageLabel.Location = new System.Drawing.Point(3, 252);
             this.bigMessageLabel.MinimumSize = new System.Drawing.Size(250, 20);
             this.bigMessageLabel.Name = "bigMessageLabel";
-            this.bigMessageLabel.Size = new System.Drawing.Size(258, 254);
+            this.bigMessageLabel.Size = new System.Drawing.Size(256, 253);
             this.bigMessageLabel.TabIndex = 3;
             this.bigMessageLabel.Text = "...";
             this.bigMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -274,7 +275,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 507);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(262, 505);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // groupBox1
@@ -287,7 +288,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(258, 108);
+            this.groupBox1.Size = new System.Drawing.Size(256, 108);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Player configuration";
@@ -296,7 +297,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, -444);
+            this.label1.Location = new System.Drawing.Point(39, -444);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 17);
             this.label1.TabIndex = 19;
