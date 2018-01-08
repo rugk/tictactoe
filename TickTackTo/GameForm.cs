@@ -15,8 +15,7 @@ namespace TickTackTo
     {
         private Game game;
 
-        private static Cursor cursorO;
-        private static Cursor cursorX;
+        private Timer messageTimeoutTimer;
 
         // box 
         public PictureBox[,] PicField { get; set; } = new PictureBox[3, 3];
@@ -69,7 +68,7 @@ namespace TickTackTo
             PictureBox clickedPic = (PictureBox) sender;
             
             // find out position of button
-            int[] pos = getPositionOfPic(clickedPic);
+            int[] pos = GetPositionOfPic(clickedPic);
 
             if (this.game.CanSelectPicture(pos))
             {
@@ -99,6 +98,9 @@ namespace TickTackTo
         /// <param name="newPlayer"></param>
         public void SetPlayerState(Player newPlayer)
         {
+            // set label
+            statusMessage.Text = Program.FirstLetterToUpper(this.game.GetNameOfPlayer(newPlayer));
+
             if (newPlayer == Player.PlayerO)
             {
                 // change cursor for each item
@@ -146,22 +148,21 @@ namespace TickTackTo
             // replace last comma with and for good style
             whereWon = Program.ReplaceLastOccurrence(whereWon, ", ", " and ");
 
-            this.ShowMessage("{0} won in {1}!", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(whoWon)), whereWon);
+            this.ShowMessageConfirm("You won!", "{0} won in {1}!", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(whoWon)), whereWon);
         }
 
         public void EndGameStalemate()
         {
-            this.ShowMessage("Uuups, we are in a stalemate! I am very sorry, but nobody won.");
+            this.ShowMessageConfirm("Uups...", "Uuups, we are in a stalemate! I am very sorry, but nobody won.");
         }
 
-        private int[] getPositionOfPic(PictureBox elem)
+        private int[] GetPositionOfPic(PictureBox elem)
         {
             // iterate through fields
             for (int column = 0; column < this.PicField.GetLength(0); column++)
             {
                 for (int line = 0; line < this.PicField.GetLength(0); line++)
                 {
-                    Debug.WriteLine("{0} == {1} ??", elem, this.PicField[column, line]);
                     // and compare PictureBox to see whether it's the one, which we need
                     if (elem.Equals(this.PicField[column, line]))
                     {
@@ -181,7 +182,45 @@ namespace TickTackTo
         /// <param name="contentArray">all params to pass to String.Format</param>
         public void ShowMessage(string message, params object[] contentArray)
         {
-            MessageBox.Show(this, String.Format(message, contentArray));
+            string formattedString = String.Format(message, contentArray);
+
+            Debug.WriteLine("Show message: " + formattedString);
+
+            // stop old timer, if neded, so that only new timer counts and the message is not hidden in the middle of nothing
+            if (messageTimeoutTimer != null)
+            {
+                messageTimeoutTimer.Stop();
+            }
+
+            // create timer for hiding message
+            messageTimeoutTimer = new Timer();
+            messageTimeoutTimer.Interval = (3 * 1000); // 3 sec
+            messageTimeoutTimer.Tick += (object sender, EventArgs e) =>
+            {
+                // hide text
+                bigMessageLabel.Text = "";
+            };
+
+
+            // Set text.
+            bigMessageLabel.Text = formattedString;
+
+            // start timeout timer
+            messageTimeoutTimer.Start();
+        }
+
+        /// <summary>
+        /// Shows a message, which the user has to confirm, i.e. click on OK.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="contentArray"></param>
+        public void ShowMessageConfirm(string title, string message, params object[] contentArray)
+        {
+            string formattedString = String.Format(message, contentArray);
+
+            Debug.WriteLine("Show message: " + title + " - " + formattedString);
+
+            MessageBox.Show(this, formattedString, title);
         }
 
         /// <summary>
@@ -192,6 +231,11 @@ namespace TickTackTo
         private void GameForm_Shown(object sender, EventArgs e)
         {
             this.ShowMessage("{0} begins", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(this.game.CurrentPlayer)));
+        }
+
+        private void bigMessageLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
