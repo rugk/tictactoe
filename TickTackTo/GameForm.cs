@@ -87,7 +87,7 @@ namespace TickTackTo
             }
         }
 
-        public void ShowWinGame(Player whoWon, int? line, int? column, int? diagonal)
+        public void EndGameWinner(Player whoWon, int? line, int? column, int? diagonal)
         {
             string whereWon = "";
 
@@ -113,6 +113,11 @@ namespace TickTackTo
             whereWon = Program.ReplaceLastOccurrence(whereWon, ", ", " and ");
 
             this.ShowMessage("{0} won in {1}!", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(whoWon)), whereWon);
+        }
+
+        public void EndGameStalemate()
+        {
+            this.ShowMessage("Uuups, we are in a stalemate! I am very sorry, but nobody won.");
         }
 
         private int[] getPositionOfPic(PictureBox elem)

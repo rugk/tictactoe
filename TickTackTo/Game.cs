@@ -102,14 +102,26 @@ namespace TickTackTo
             GameResult result = GetGameResult();
 
             // early return if noone won
-            if (result.Line == null && result.Column == null && result.Diagonal == null)
+            switch (result.Winner)
             {
-                return;
+                case null:
+                    // in case of no winner, just continue game
+                    return;
+                case Player.PlayerNull:
+                    // stalemate
+                    this.gameWindow.EndGameStalemate();
+                    break;
+                // fall through for "usual" players
+                case Player.PlayerO:
+                case Player.PlayerX:
+                    // show winner message
+                    this.gameWindow.EndGameWinner((Player)result.Winner, result.Line, result.Column, result.Diagonal);
+                    break;
+                default:
+                    throw new InvalidOperationException("returned winner status is invalid");
             }
 
-            // show winner message
-            this.gameWindow.ShowWinGame((Player) result.Winner, result.Line, result.Column, result.Diagonal);
-
+            
             // start new game
             this.StartGame(Program.InitialPlayer);
             this.gameWindow.StartGame(this);
