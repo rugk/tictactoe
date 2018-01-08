@@ -63,19 +63,39 @@ namespace TickTackTo.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap picO {
+        internal static System.Drawing.Bitmap cross {
             get {
-                object obj = ResourceManager.GetObject("picO", resourceCulture);
+                object obj = ResourceManager.GetObject("cross", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] cursor_circle {
+            get {
+                object obj = ResourceManager.GetObject("cursor_circle", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] cursor_cross {
+            get {
+                object obj = ResourceManager.GetObject("cursor_cross", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap picX {
+        internal static System.Drawing.Bitmap picO {
             get {
-                object obj = ResourceManager.GetObject("picX", resourceCulture);
+                object obj = ResourceManager.GetObject("picO", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

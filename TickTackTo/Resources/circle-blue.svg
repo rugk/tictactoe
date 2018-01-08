@@ -14,9 +14,9 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="circle-blue.svg"
-   inkscape:export-filename="C:\Users\***REMOVED***Ro\Downloads\circle-blue.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-filename="C:\Users\***REMOVED***Ro\Downloads\circle-blue-small.png"
+   inkscape:export-xdpi="10.259821"
+   inkscape:export-ydpi="10.259821">
   <defs
      id="defs12" />
   <sodipodi:namedview
@@ -33,7 +33,7 @@
      id="namedview10"
      showgrid="false"
      inkscape:zoom="1.1209804"
-     inkscape:cx="-90.718663"
+     inkscape:cx="-285.63733"
      inkscape:cy="105.265"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -89,7 +89,7 @@
         </dc:subject>
       </cc:Work>
       <cc:License
-         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
         <cc:permits
            rdf:resource="http://creativecommons.org/ns#Reproduction" />
         <cc:permits

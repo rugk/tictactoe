@@ -86,15 +86,18 @@ namespace TickTackTo
             if (this.CurrentPlayer == Player.PlayerO)
             {
                 this.CurrentPlayer = Player.PlayerX;
-                return;
-            } else if (this.CurrentPlayer == Player.PlayerX)
+            }
+            else if (this.CurrentPlayer == Player.PlayerX)
             {
                 this.CurrentPlayer = Player.PlayerO;
-                return;
+            }
+            else
+            {
+                throw new InvalidOperationException("player state invalid");
             }
 
-            // else
-            throw new InvalidOperationException("player state invalid");
+            // also change GUI state
+            this.gameWindow.SetPlayerState(this.CurrentPlayer);
         }
 
         public void CheckGameEnd()

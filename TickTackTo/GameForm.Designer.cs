@@ -52,10 +52,11 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.Controls.Add(this.pic33, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.pic32, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.pic31, 0, 2);
@@ -72,7 +73,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(382, 353);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(632, 353);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // pic33
@@ -82,7 +83,7 @@
             this.pic33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pic33.Location = new System.Drawing.Point(257, 237);
             this.pic33.Name = "pic33";
-            this.pic33.Size = new System.Drawing.Size(122, 113);
+            this.pic33.Size = new System.Drawing.Size(121, 113);
             this.pic33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic33.TabIndex = 9;
             this.pic33.TabStop = false;
@@ -121,7 +122,7 @@
             this.pic23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pic23.Location = new System.Drawing.Point(257, 120);
             this.pic23.Name = "pic23";
-            this.pic23.Size = new System.Drawing.Size(122, 111);
+            this.pic23.Size = new System.Drawing.Size(121, 111);
             this.pic23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic23.TabIndex = 6;
             this.pic23.TabStop = false;
@@ -160,7 +161,7 @@
             this.pic13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pic13.Location = new System.Drawing.Point(257, 3);
             this.pic13.Name = "pic13";
-            this.pic13.Size = new System.Drawing.Size(122, 111);
+            this.pic13.Size = new System.Drawing.Size(121, 111);
             this.pic13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic13.TabIndex = 3;
             this.pic13.TabStop = false;
@@ -196,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 353);
+            this.ClientSize = new System.Drawing.Size(632, 353);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "GameForm";
             this.Text = "TickTackTo";
