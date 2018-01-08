@@ -31,12 +31,6 @@ namespace TickTackTo
         /// <param name="gameInstance"></param>
         public void StartGame(Game gameInstance)
         {
-            bool hadPreviousGame = false;
-            if (this.game != null)
-            {
-                hadPreviousGame = true;
-            }
-
             this.game = gameInstance;
 
             // initialize/reset PicField
@@ -55,11 +49,8 @@ namespace TickTackTo
             // set player state
             this.SetPlayerState(this.game.CurrentPlayer);
 
-            // show start message, if not show automatically by showing the form
-            if (hadPreviousGame)
-            {
-                GameForm_Shown(null, null);
-            }
+            // show begin message
+            this.ShowMessage("{0} begins", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(this.game.CurrentPlayer)));
         }
 
         private void PicClicked(object sender, EventArgs e)
@@ -221,16 +212,6 @@ namespace TickTackTo
             Debug.WriteLine("Show message: " + title + " - " + formattedString);
 
             MessageBox.Show(this, formattedString, title);
-        }
-
-        /// <summary>
-        /// show game beginener message
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GameForm_Shown(object sender, EventArgs e)
-        {
-            this.ShowMessage("{0} begins", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(this.game.CurrentPlayer)));
         }
 
         private void bigMessageLabel_Click(object sender, EventArgs e)
