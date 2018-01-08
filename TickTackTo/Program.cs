@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,7 +37,7 @@ namespace TickTackTo
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string FirstLetterToUpper(string str)
+        internal static string FirstLetterToUpper(string str)
         {
             if (str == null)
                 return null;
@@ -54,7 +55,7 @@ namespace TickTackTo
         /// <param name="Find"></param>
         /// <param name="Replace"></param>
         /// <returns></returns>
-        public static string ReplaceLastOccurrence(string Source, string Find, string Replace)
+        internal static string ReplaceLastOccurrence(string Source, string Find, string Replace)
         {
             int place = Source.LastIndexOf(Find);
 
@@ -63,6 +64,19 @@ namespace TickTackTo
 
             string result = Source.Remove(place, Find.Length).Insert(place, Replace);
             return result;
+        }
+
+        /// <summary>
+        /// Converts a memory stream to a cursor file. This is needed for the 
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <returns></returns>
+        internal static Cursor ConvertCursor(byte[] buffer)
+        {
+            using (var m = new MemoryStream(buffer))
+            {
+                return new Cursor(m);
+            }
         }
     }
 }

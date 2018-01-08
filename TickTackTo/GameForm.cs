@@ -15,6 +15,9 @@ namespace TickTackTo
     {
         private Game game;
 
+        private static Cursor cursorO;
+        private static Cursor cursorX;
+
         // box 
         public PictureBox[,] PicField { get; set; } = new PictureBox[3, 3];
 
@@ -50,6 +53,9 @@ namespace TickTackTo
                 picEl.Image = null;
             }
 
+            // set player state
+            this.SetPlayerState(this.game.CurrentPlayer);
+
             // show start message, if not show automatically by showing the form
             if (hadPreviousGame)
             {
@@ -70,7 +76,7 @@ namespace TickTackTo
                 // change image
                 if (this.game.CurrentPlayer == Player.PlayerX)
                 {
-                    clickedPic.Image = Properties.Resources.picX;
+                    clickedPic.Image = Properties.Resources.cross;
                 }
                 else
                 {
@@ -84,6 +90,34 @@ namespace TickTackTo
             else
             {
                 this.ShowMessage("{0}, please click on an empty field!", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(this.game.CurrentPlayer)));
+            }
+        }
+
+        /// <summary>
+        /// Changes the state of the UI to indicate that it is the turn of the passed player.
+        /// </summary>
+        /// <param name="newPlayer"></param>
+        public void SetPlayerState(Player newPlayer)
+        {
+            if (newPlayer == Player.PlayerO)
+            {
+                // change cursor for each item
+                foreach (var picEl in PicField)
+                {
+                    picEl.Cursor = Program.ConvertCursor(Properties.Resources.cursor_circle);
+                }
+            }
+            else if (newPlayer == Player.PlayerX)
+            {
+                // change cursor for each item
+                foreach (var picEl in PicField)
+                {
+                    picEl.Cursor = Program.ConvertCursor(Properties.Resources.cursor_cross);
+                }
+            }
+            else
+            {
+                throw new ArgumentException("player argument invalid");
             }
         }
 
