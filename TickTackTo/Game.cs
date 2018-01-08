@@ -173,13 +173,6 @@ namespace TickTackTo
             int numLines = this.Field.GetLength(1);
             int numColumns = this.Field.GetLength(0);
 
-            // check whether all fields are full
-            if (gameFieldsUsed == gameFieldsMax)
-            {
-                // we have a stalemate here -> PlayerNull won
-                return new GameResult(Player.PlayerNull, null, null, null);
-            }
-
             // intialize var with first item as this is always the first reference
             Player lastLineElem = this.Field[0, 0];
 
@@ -306,6 +299,13 @@ namespace TickTackTo
                 Debug.WriteLine("SUCCESS: found result in diagonal 2");
                 result.Winner = lastDia2Elem;
                 result.Diagonal = 2;
+            }
+
+            // if we found no other winner, check whether all fields are full
+            if (result.Winner == null && (gameFieldsUsed == gameFieldsMax))
+            {
+                // we have a stalemate here -> PlayerNull won
+                return new GameResult(Player.PlayerNull, null, null, null);
             }
 
             return result;

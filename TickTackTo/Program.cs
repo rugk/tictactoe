@@ -67,7 +67,7 @@ namespace TickTackTo
         }
 
         /// <summary>
-        /// Converts a memory stream to a cursor file. This is needed for the 
+        /// Converts a memory stream to a cursor file. This is needed for the conversion of the file resource 
         /// </summary>
         /// <param name="buffer"></param>
         /// <returns></returns>
