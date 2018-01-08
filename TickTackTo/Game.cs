@@ -144,26 +144,6 @@ namespace TickTackTo
             }
         }
         
-        public string GetNameOfPlayer(Player player)
-        {
-            // also possible: return player.ToString();
-
-            Debug.WriteLine("request name for player: {0}", player);
-
-            switch (player)
-            {
-                // break not needed as early return is used here and so the break would never be reached anyway
-                case Player.PlayerX:
-                    return "player 1";
-                case Player.PlayerO:
-                    return "player 2";
-                // PlayerNull and any other value does not need to return something useful
-                case Player.PlayerNull:
-                default:
-                    return "unknown player";
-            }
-        }
-
         /// <summary>
         /// Return the lines, columns and diagonal elements where a player won, if they won...
         /// 

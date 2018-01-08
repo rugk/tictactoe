@@ -50,7 +50,7 @@ namespace TickTackTo
             this.SetPlayerState(this.game.CurrentPlayer);
 
             // show begin message
-            this.ShowMessage("{0} begins", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(this.game.CurrentPlayer)));
+            this.ShowMessage("{0} begins", Program.FirstLetterToUpper(this.GetNameOfPlayer(this.game.CurrentPlayer)));
         }
 
         private void PicClicked(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace TickTackTo
             }
             else
             {
-                this.ShowMessage("{0}, please click on an empty field!", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(this.game.CurrentPlayer)));
+                this.ShowMessage("{0}, please click on an empty field!", Program.FirstLetterToUpper(this.GetNameOfPlayer(this.game.CurrentPlayer)));
             }
         }
 
@@ -93,7 +93,7 @@ namespace TickTackTo
         public void SetPlayerState(Player newPlayer)
         {
             // set label
-            statusMessage.Text = Program.FirstLetterToUpper(this.game.GetNameOfPlayer(newPlayer));
+            statusMessage.Text = Program.FirstLetterToUpper(this.GetNameOfPlayer(newPlayer));
 
             if (newPlayer == Player.PlayerO)
             {
@@ -142,7 +142,7 @@ namespace TickTackTo
             // replace last comma with and for good style
             whereWon = Program.ReplaceLastOccurrence(whereWon, ", ", " and ");
 
-            this.ShowMessageConfirm("You won!", "{0} won in {1}!", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(whoWon)), whereWon);
+            this.ShowMessageConfirm("You won!", "{0} won in {1}!", Program.FirstLetterToUpper(this.GetNameOfPlayer(whoWon)), whereWon);
         }
 
         public void EndGameStalemate()
@@ -215,6 +215,31 @@ namespace TickTackTo
             Debug.WriteLine("Show message: " + title + " - " + formattedString);
 
             MessageBox.Show(this, formattedString, title);
+        }
+
+        public string GetNameOfPlayer(Player player)
+        {
+            // also possible: return player.ToString();
+
+            Debug.WriteLine("request name for player: {0}", player);
+
+            switch (player)
+            {
+                // break not needed as early return is used here and so the break would never be reached anyway
+                case Player.PlayerX:
+                    return (inputPlayer1.Text != "" ? inputPlayer1.Text : "player 1");
+                case Player.PlayerO:
+                    return (inputPlayer2.Text != "" ? inputPlayer2.Text : "player 2");
+                // PlayerNull and any other value does not need to return something useful
+                case Player.PlayerNull:
+                default:
+                    return "unknown player";
+            }
+        }
+
+        private void ChangePlayerNames(object sender, EventArgs e)
+        {
+
         }
     }
 }
