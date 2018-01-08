@@ -213,10 +213,5 @@ namespace TickTackTo
 
             MessageBox.Show(this, formattedString, title);
         }
-
-        private void bigMessageLabel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
