@@ -41,13 +41,14 @@
             this.pic11 = new System.Windows.Forms.PictureBox();
             this.pic12 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.bigMessageLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.player2label = new System.Windows.Forms.Label();
             this.inputPlayer2 = new System.Windows.Forms.TextBox();
             this.player1label = new System.Windows.Forms.Label();
             this.inputPlayer1 = new System.Windows.Forms.TextBox();
-            this.bigMessageLabel = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic33)).BeginInit();
@@ -63,10 +64,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -241,88 +240,101 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Size = new System.Drawing.Size(880, 507);
             this.splitContainer1.SplitterDistance = 612;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.label1);
-            this.splitContainer2.Panel1.Controls.Add(this.player2label);
-            this.splitContainer2.Panel1.Controls.Add(this.inputPlayer2);
-            this.splitContainer2.Panel1.Controls.Add(this.player1label);
-            this.splitContainer2.Panel1.Controls.Add(this.inputPlayer1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.bigMessageLabel);
-            this.splitContainer2.Size = new System.Drawing.Size(264, 507);
-            this.splitContainer2.SplitterDistance = 253;
-            this.splitContainer2.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Player configuration:";
-            // 
-            // player2label
-            // 
-            this.player2label.AutoSize = true;
-            this.player2label.Location = new System.Drawing.Point(22, 100);
-            this.player2label.Name = "player2label";
-            this.player2label.Size = new System.Drawing.Size(89, 17);
-            this.player2label.TabIndex = 3;
-            this.player2label.Text = "Player 2 (O):";
-            // 
-            // inputPlayer2
-            // 
-            this.inputPlayer2.Location = new System.Drawing.Point(115, 97);
-            this.inputPlayer2.Name = "inputPlayer2";
-            this.inputPlayer2.Size = new System.Drawing.Size(122, 22);
-            this.inputPlayer2.TabIndex = 2;
-            this.inputPlayer2.TextChanged += new System.EventHandler(this.ChangePlayerNames);
-            // 
-            // player1label
-            // 
-            this.player1label.AutoSize = true;
-            this.player1label.Location = new System.Drawing.Point(22, 61);
-            this.player1label.Name = "player1label";
-            this.player1label.Size = new System.Drawing.Size(87, 17);
-            this.player1label.TabIndex = 1;
-            this.player1label.Text = "Player 1 (X):";
-            // 
-            // inputPlayer1
-            // 
-            this.inputPlayer1.Location = new System.Drawing.Point(115, 58);
-            this.inputPlayer1.Name = "inputPlayer1";
-            this.inputPlayer1.Size = new System.Drawing.Size(122, 22);
-            this.inputPlayer1.TabIndex = 0;
-            this.inputPlayer1.TextChanged += new System.EventHandler(this.ChangePlayerNames);
             // 
             // bigMessageLabel
             // 
             this.bigMessageLabel.AutoEllipsis = true;
             this.bigMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bigMessageLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigMessageLabel.Location = new System.Drawing.Point(0, 0);
+            this.bigMessageLabel.Location = new System.Drawing.Point(3, 253);
             this.bigMessageLabel.MinimumSize = new System.Drawing.Size(250, 20);
             this.bigMessageLabel.Name = "bigMessageLabel";
-            this.bigMessageLabel.Size = new System.Drawing.Size(264, 250);
+            this.bigMessageLabel.Size = new System.Drawing.Size(258, 254);
             this.bigMessageLabel.TabIndex = 3;
             this.bigMessageLabel.Text = "...";
             this.bigMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.bigMessageLabel, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 507);
+            this.tableLayoutPanel2.TabIndex = 5;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.player2label);
+            this.groupBox1.Controls.Add(this.inputPlayer2);
+            this.groupBox1.Controls.Add(this.player1label);
+            this.groupBox1.Controls.Add(this.inputPlayer1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(258, 108);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Player configuration";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, -444);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 17);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Player configuration:";
+            // 
+            // player2label
+            // 
+            this.player2label.AutoSize = true;
+            this.player2label.Location = new System.Drawing.Point(21, 65);
+            this.player2label.Name = "player2label";
+            this.player2label.Size = new System.Drawing.Size(89, 17);
+            this.player2label.TabIndex = 18;
+            this.player2label.Text = "Player 2 (O):";
+            // 
+            // inputPlayer2
+            // 
+            this.inputPlayer2.Location = new System.Drawing.Point(114, 63);
+            this.inputPlayer2.Name = "inputPlayer2";
+            this.inputPlayer2.Size = new System.Drawing.Size(122, 22);
+            this.inputPlayer2.TabIndex = 17;
+            this.inputPlayer2.TextChanged += new System.EventHandler(this.ChangePlayerNames);
+            // 
+            // player1label
+            // 
+            this.player1label.AutoSize = true;
+            this.player1label.Location = new System.Drawing.Point(21, 33);
+            this.player1label.Name = "player1label";
+            this.player1label.Size = new System.Drawing.Size(87, 17);
+            this.player1label.TabIndex = 16;
+            this.player1label.Text = "Player 1 (X):";
+            // 
+            // inputPlayer1
+            // 
+            this.inputPlayer1.Location = new System.Drawing.Point(114, 31);
+            this.inputPlayer1.Name = "inputPlayer1";
+            this.inputPlayer1.Size = new System.Drawing.Size(122, 22);
+            this.inputPlayer1.TabIndex = 15;
+            this.inputPlayer1.TextChanged += new System.EventHandler(this.ChangePlayerNames);
             // 
             // GameForm
             // 
@@ -350,11 +362,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,12 +385,13 @@
         private System.Windows.Forms.PictureBox pic12;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label bigMessageLabel;
-        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label player2label;
         private System.Windows.Forms.TextBox inputPlayer2;
         private System.Windows.Forms.Label player1label;
         private System.Windows.Forms.TextBox inputPlayer1;
-        private System.Windows.Forms.Label label1;
     }
 }
 
