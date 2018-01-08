@@ -238,10 +238,11 @@
             // 
             // bigMessageLabel
             // 
+            this.bigMessageLabel.AutoEllipsis = true;
             this.bigMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bigMessageLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bigMessageLabel.Location = new System.Drawing.Point(0, 0);
-            this.bigMessageLabel.MinimumSize = new System.Drawing.Size(150, 20);
+            this.bigMessageLabel.MinimumSize = new System.Drawing.Size(250, 20);
             this.bigMessageLabel.Name = "bigMessageLabel";
             this.bigMessageLabel.Size = new System.Drawing.Size(264, 507);
             this.bigMessageLabel.TabIndex = 3;
@@ -255,6 +256,7 @@
             this.ClientSize = new System.Drawing.Size(880, 532);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
+            this.MinimumSize = new System.Drawing.Size(750, 500);
             this.Name = "GameForm";
             this.Text = "TickTackTo";
             this.statusStrip1.ResumeLayout(false);

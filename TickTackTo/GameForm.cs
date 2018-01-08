@@ -76,6 +76,9 @@ namespace TickTackTo
                 // change internal data
                 this.game.SelectPicture(pos);
                 this.game.SwitchPlayer();
+
+                // finally check whether the game ended
+                game.CheckGameEnd();
             }
             else
             {
