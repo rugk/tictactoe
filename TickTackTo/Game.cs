@@ -41,6 +41,8 @@ namespace TickTackTo
             // TODO: random begin
             this.CurrentPlayer = startPlayer;
 
+            Debug.WriteLine("Started new game with player {0}", this.CurrentPlayer);
+
             // erase player array, so we can start with an empty one, if needed
             this.Field = new Player[3, 3];
             gameFieldsUsed = 0;
@@ -76,9 +78,6 @@ namespace TickTackTo
 
             // one more field selected
             gameFieldsUsed++;
-
-            // automatically check game result as the staten can change at each picture change
-            CheckGameEnd();
         }
 
         public void SwitchPlayer()
@@ -148,6 +147,8 @@ namespace TickTackTo
         public string GetNameOfPlayer(Player player)
         {
             // also possible: return player.ToString();
+
+            Debug.WriteLine("request name for player: {0}", player);
 
             switch (player)
             {
