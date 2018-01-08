@@ -257,7 +257,6 @@
             this.Controls.Add(this.statusStrip1);
             this.Name = "GameForm";
             this.Text = "TickTackTo";
-            this.Shown += new System.EventHandler(this.GameForm_Shown);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
