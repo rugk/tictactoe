@@ -93,7 +93,7 @@ namespace TickTackTo
         public void SetPlayerState(Player newPlayer)
         {
             // set label
-            statusMessage.Text = Program.FirstLetterToUpper(this.GetNameOfPlayer(newPlayer));
+            this.SetStatusMessage(Program.FirstLetterToUpper(this.GetNameOfPlayer(newPlayer)));
 
             if (newPlayer == Player.PlayerO)
             {
@@ -217,6 +217,15 @@ namespace TickTackTo
             MessageBox.Show(this, formattedString, title);
         }
 
+        public void SetStatusMessage(string message, params object[] contentArray)
+        {
+            string formattedString = String.Format(message, contentArray);
+
+            Debug.WriteLine("Modify status message: " + formattedString);
+
+            statusMessage.Text = formattedString;
+        }
+
         public string GetNameOfPlayer(Player player)
         {
             // also possible: return player.ToString();
@@ -239,7 +248,9 @@ namespace TickTackTo
 
         private void ChangePlayerNames(object sender, EventArgs e)
         {
-
+            Debug.WriteLine("ChangePlayerNames");
+            // just trigger update of player state
+            this.SetPlayerState(this.game.CurrentPlayer);
         }
     }
 }
