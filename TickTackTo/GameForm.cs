@@ -29,6 +29,12 @@ namespace TickTackTo
         /// <param name="gameInstance"></param>
         public void StartGame(Game gameInstance)
         {
+            bool hadPreviousGame = false;
+            if (this.game != null)
+            {
+                hadPreviousGame = true;
+            }
+
             this.game = gameInstance;
 
             // initialize/reset PicField
@@ -37,7 +43,18 @@ namespace TickTackTo
                 { pic21, pic22, pic23 },
                 { pic31, pic32, pic33 },
             };
-            
+
+            // reset each image to an empty element if needed
+            foreach (var picEl in PicField)
+            {
+                picEl.Image = null;
+            }
+
+            // show start message, if not show automatically by showing the form
+            if (hadPreviousGame)
+            {
+                GameForm_Shown(null, null);
+            }
         }
 
         private void PicClicked(object sender, EventArgs e)
@@ -48,7 +65,6 @@ namespace TickTackTo
             // find out position of button
             int[] pos = getPositionOfPic(clickedPic);
 
-            // TODO: check if field can be clicked
             if (this.game.CanSelectPicture(pos))
             {
                 // change image
@@ -60,10 +76,14 @@ namespace TickTackTo
                 {
                     clickedPic.Image = Properties.Resources.picO;
                 }
-                
+
                 // change internal data
                 this.game.SelectPicture(pos);
                 this.game.SwitchPlayer();
+            }
+            else
+            {
+                this.ShowMessage("{0}, please click on an empty field!", Program.FirstLetterToUpper(this.game.GetNameOfPlayer(this.game.CurrentPlayer)));
             }
         }
 
@@ -126,7 +146,7 @@ namespace TickTackTo
         }
 
         /// <summary>
-        /// show game beginenr message
+        /// show game beginener message
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

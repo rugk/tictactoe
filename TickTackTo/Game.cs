@@ -18,10 +18,12 @@ namespace TickTackTo
     public class Game
     {
         public Player CurrentPlayer { get; protected set; }
-        private Player[,] Field = new Player[3, 3];
 
+        private Player[,] Field = new Player[3, 3];
         private GameForm gameWindow;
- 
+        private int gameFieldsMax;
+        private int gameFieldsUsed;
+
         /// <summary>
         /// simple constructor
         /// </summary>
@@ -41,6 +43,9 @@ namespace TickTackTo
 
             // erase player array, so we can start with an empty one, if needed
             this.Field = new Player[3, 3];
+            gameFieldsUsed = 0;
+
+            gameFieldsMax = 3 * 3;
         }
 
         /// <summary>
@@ -52,7 +57,8 @@ namespace TickTackTo
         /// </param>
         public bool CanSelectPicture(int[] pos)
         {
-            return true;
+            // only allow clicks on PlayerNull fields
+            return (this.Field[pos[0], pos[1]] == Player.PlayerNull);
         }
 
         /// <summary>
@@ -67,6 +73,9 @@ namespace TickTackTo
             Debug.WriteLine("SelectPicture: column {0}, line {1}", pos[0], pos[1]);
 
             this.Field[pos[0], pos[1]] = this.CurrentPlayer;
+
+            // one more field selected
+            gameFieldsUsed++;
 
             // automatically check game result as the staten can change at each picture change
             CheckGameEnd();
@@ -99,10 +108,11 @@ namespace TickTackTo
             }
 
             // show winner message
-            this.gameWindow.ShowWinGame((Player)result.Winner, result.Line, result.Column, result.Diagonal);
+            this.gameWindow.ShowWinGame((Player) result.Winner, result.Line, result.Column, result.Diagonal);
 
-            // start new game?
-            this.StartGame();
+            // start new game
+            this.StartGame(Program.InitialPlayer);
+            this.gameWindow.StartGame(this);
         }
 
         public struct GameResult
@@ -140,11 +150,20 @@ namespace TickTackTo
 
         /// <summary>
         /// Return the lines, columns and diagonal elements where a player won, if they won...
+        /// 
+        /// In case of a stalemate it returns "PlayerNull" as the winner.
         /// </summary>
         private GameResult GetGameResult()
         {
             int numLines = this.Field.GetLength(1);
             int numColumns = this.Field.GetLength(0);
+
+            // check whether all fields are full
+            if (gameFieldsUsed == gameFieldsMax)
+            {
+                // we have a stalemate here -> PlayerNull won
+                return new GameResult(Player.PlayerNull, null, null, null);
+            }
 
             // intialize var with first item as this is always the first reference
             Player lastLineElem = this.Field[0, 0];

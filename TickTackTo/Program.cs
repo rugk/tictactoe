@@ -9,12 +9,11 @@ namespace TickTackTo
 {
     static class Program
     {
-        const 
+        public const Player InitialPlayer = Player.PlayerX;
 
         /// <summary>
         /// The main entry got the application
         /// </summary>
-        [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
@@ -26,7 +25,7 @@ namespace TickTackTo
             Debug.WriteLine("Start app.");
 
             Game newGame = new Game(gameWindow);
-            newGame.StartGame(Player.PlayerX);
+            newGame.StartGame(Program.InitialPlayer);
             gameWindow.StartGame(newGame);
 
             // show form

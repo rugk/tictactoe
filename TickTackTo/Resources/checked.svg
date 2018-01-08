@@ -11,13 +11,13 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg2"
    sodipodi:docname="checked.svg"
-   inkscape:export-filename="/home/sergey/pix/shared/check.png"
+   inkscape:export-filename="C:\Users\***REMOVED***Ro\source\repos\TickTackTo\TickTackTo\Resources\checked.png"
    viewBox="0 0 38.687999 38.687199"
    sodipodi:version="0.32"
-   inkscape:export-xdpi="90"
+   inkscape:export-xdpi="465.26001"
    version="1.0"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:export-ydpi="90"
+   inkscape:export-ydpi="465.26001"
    inkscape:version="0.91 r13725"
    width="38.688"
    height="38.687199">
@@ -30,26 +30,32 @@
      guidetolerance="10.0"
      pagecolor="#ffffff"
      gridtolerance="10.0"
-     inkscape:zoom="4.2395833"
+     inkscape:zoom="11.991352"
      objecttolerance="10.0"
      borderopacity="1.0"
      inkscape:current-layer="svg2"
-     inkscape:cx="-3.410242"
-     inkscape:cy="30.35309"
-     inkscape:window-y="25"
-     inkscape:window-x="0"
-     inkscape:window-height="621"
+     inkscape:cx="19.527124"
+     inkscape:cy="21.322422"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:window-height="801"
      inkscape:pageopacity="0.0"
-     inkscape:window-width="948"
+     inkscape:window-width="1536"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="1" />
   <path
      inkscape:connector-curvature="0"
-     d="m 8.449,36.0364 24.18,-28.87 m -22.727,2.595 22.134,22.029"
+     d="m 6.3080346,34.488292 24.1800004,-28.87 m -22.7270004,2.595 22.1340004,22.029"
+     style="fill:#ff0000;fill-opacity:0.27303754;stroke:#ff0000;stroke-width:9;stroke-opacity:0.59385663"
+     sodipodi:nodetypes="cccc"
+     id="path2163-9" />
+  <path
+     inkscape:connector-curvature="0"
+     d="m 8.449,34.0364 24.18,-28.87 m -22.727,2.595 22.134,22.029"
      style="fill:none;stroke:#d40000;stroke-width:9"
      sodipodi:nodetypes="cccc"
      id="path2163" />
@@ -68,7 +74,7 @@
             <dc:title>Openclipart</dc:title>
           </cc:Agent>
         </dc:publisher>
-        <dc:title></dc:title>
+        <dc:title />
         <dc:date>2008-01-16T09:51:22</dc:date>
         <dc:description>Classic checkmark icon (“yes”) and its companion cross icon (“no”). Red tick and cross, black ballot box outlines. Ballot box internal is transparent.</dc:description>
         <dc:source>https://openclipart.org/detail/11118/check-sign-and-cross-sign-by-jetxee</dc:source>
