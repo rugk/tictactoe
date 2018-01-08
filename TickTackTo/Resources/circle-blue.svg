@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3664"
+   viewBox="0 0 208.4 210.53"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="circle-blue.svg"
+   inkscape:export-filename="C:\Users\***REMOVED***Ro\Downloads\circle-blue.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1536"
+     inkscape:window-height="801"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="1.1209804"
+     inkscape:cx="-90.718663"
+     inkscape:cy="105.265"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <title
+     id="title3683">Time</title>
+  <g
+     id="layer1"
+     transform="translate(112.77 -529.95)">
+    <path
+       inkscape:connector-curvature="0"
+       d="m -9.729445,535.03071 c -54.629893,0 -98.917125,44.80839 -98.917125,100.09283 0,11.22957 1.82988,22.03595 5.1999,32.11408 -2.23932,-8.45423 -3.44085,-17.42703 -3.44085,-26.70552 0,-51.29892 36.773347,-92.88604 82.135056,-92.88604 45.362327,0 82.135052,41.58839 82.135052,92.88604 0,51.29891 -36.773344,92.88603 -82.135052,92.88603 -1.515088,0 -3.009207,-0.0466 -4.504005,-0.13816 6.313227,1.27928 12.838628,1.9541 19.5236218,1.9541 54.6298932,0 98.9171282,-44.82796 98.9171282,-100.11177 0,-55.2838 -44.284761,-100.09282 -98.9171282,-100.09282 z"
+       style="fill:#c8b7b7"
+       id="path5528" />
+    <path
+       inkscape:connector-curvature="0"
+       d="m -9.729445,530.39462 c -52.766111,-5.69096 -95.811855,44.39215 -101.700735,94.73669 -6.44808,38.90021 10.60741,81.6053 45.525629,100.42126 50.47984,33.52007 121.922118,7.0773 149.857191,-44.52163 C 121.90871,617.19311 61.127038,525.12818 -9.7313007,530.39589 Z m 0,9.27724 c 45.846057,-5.7979 85.345483,36.04529 90.516811,80.49997 8.506713,43.51925 -12.775532,96.00624 -57.653511,107.68489 -42.417268,14.60053 -92.539568,-5.65666 -112.983637,-46.53587 -22.497138,-38.44039 -18.147898,-95.08407 20.154573,-121.52368 17.040023,-13.21349 38.420623,-21.23886 59.9688569,-20.12721 z"
+       style="color:#000000;text-indent:0;text-transform:none;block-progression:tb;fill:#000080"
+       id="path5526" />
+  </g>
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Time</dc:title>
+        <dc:date>2012-04-08T06:49:11</dc:date>
+        <dc:description>Circle intended to indicate time</dc:description>
+        <dc:source>https://openclipart.org/detail/169414/circle-by-bitterjug</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>bitterjug</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>abstract</rdf:li>
+            <rdf:li>circle</rdf:li>
+            <rdf:li>round</rdf:li>
+            <rdf:li>shaded</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
