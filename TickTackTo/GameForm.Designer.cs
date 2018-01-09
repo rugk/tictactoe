@@ -279,6 +279,7 @@
             // 
             // buttonRandomStartPlayer
             // 
+            this.buttonRandomStartPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRandomStartPlayer.Location = new System.Drawing.Point(103, 37);
             this.buttonRandomStartPlayer.Name = "buttonRandomStartPlayer";
             this.buttonRandomStartPlayer.Size = new System.Drawing.Size(75, 23);
@@ -365,6 +366,8 @@
             // 
             // inputPlayer2
             // 
+            this.inputPlayer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.inputPlayer2.Location = new System.Drawing.Point(86, 51);
             this.inputPlayer2.Margin = new System.Windows.Forms.Padding(2);
             this.inputPlayer2.Name = "inputPlayer2";
@@ -384,6 +387,8 @@
             // 
             // inputPlayer1
             // 
+            this.inputPlayer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.inputPlayer1.Location = new System.Drawing.Point(86, 25);
             this.inputPlayer1.Margin = new System.Windows.Forms.Padding(2);
             this.inputPlayer1.Name = "inputPlayer1";
