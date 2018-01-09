@@ -155,7 +155,7 @@ namespace TickTackTo
             // enable controls for start player again
             this.ChangeStateOfPlayerRadio(true);
 
-            this.ShowMessageConfirm("You won!", "{0} won in {1}!", Program.FirstLetterToUpper(this.GetNameOfPlayer(whoWon)), whereWon);
+            this.ShowMessageConfirm("You won!", "{0} won in {1}!", MessageBoxIcon.Information, Program.FirstLetterToUpper(this.GetNameOfPlayer(whoWon)), whereWon);
         }
 
         public void EndGameStalemate()
@@ -163,7 +163,7 @@ namespace TickTackTo
             // enable controls for start player again
             this.ChangeStateOfPlayerRadio(true);
 
-            this.ShowMessageConfirm("Uups...", "Uuups, we are in a stalemate! I am very sorry, but nobody won.");
+            this.ShowMessageConfirm("Uups...", "Uuups, we are in a stalemate! I am very sorry, but nobody won.", MessageBoxIcon.Information);
         }
 
         private int[] GetPositionOfPic(PictureBox elem)
@@ -224,13 +224,18 @@ namespace TickTackTo
         /// </summary>
         /// <param name="message"></param>
         /// <param name="contentArray"></param>
-        public void ShowMessageConfirm(string title, string message, params object[] contentArray)
+        public void ShowMessageConfirm(string title, string message, MessageBoxIcon messageBoxIcon, params object[] contentArray)
         {
             string formattedString = String.Format(message, contentArray);
 
             Debug.WriteLine("Show message: " + title + " - " + formattedString);
 
-            MessageBox.Show(this, formattedString, title);
+            MessageBox.Show(this, formattedString, title, MessageBoxButtons.OK, messageBoxIcon);
+        }
+        public void ShowMessageConfirm(string title, string message, params object[] contentArray)
+        {
+            // use no icon by default
+            ShowMessageConfirm(title, message, MessageBoxIcon.None, contentArray);
         }
 
         public void SetStatusMessage(string message, params object[] contentArray)
