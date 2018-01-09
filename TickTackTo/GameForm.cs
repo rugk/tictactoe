@@ -16,6 +16,7 @@ namespace TickTackTo
         private Game game;
 
         private Timer messageTimeoutTimer;
+        private RadioButton[] playerRadioButtons;
 
         // box 
         public PictureBox[,] PicField { get; set; } = new PictureBox[3, 3];
@@ -23,6 +24,8 @@ namespace TickTackTo
         public GameForm()
         {
             InitializeComponent();
+
+            this.playerRadioButtons = groupStartPlayer.Controls.OfType<RadioButton>().ToArray();
         }
 
         /// <summary>
@@ -76,6 +79,12 @@ namespace TickTackTo
                 // change internal data
                 this.game.SelectPicture(pos);
                 this.game.SwitchPlayer();
+
+                // disable start player selection if game began
+                if (this.game.GameFieldsUsed == 1)
+                {
+                    this.ChangeStateOfPlayerRadio(false);
+                }
 
                 // finally check whether the game ended
                 game.CheckGameEnd();
@@ -142,11 +151,17 @@ namespace TickTackTo
             // replace last comma with and for good style
             whereWon = Program.ReplaceLastOccurrence(whereWon, ", ", " and ");
 
+            // enable controls for start player again
+            this.ChangeStateOfPlayerRadio(true);
+
             this.ShowMessageConfirm("You won!", "{0} won in {1}!", Program.FirstLetterToUpper(this.GetNameOfPlayer(whoWon)), whereWon);
         }
 
         public void EndGameStalemate()
         {
+            // enable controls for start player again
+            this.ChangeStateOfPlayerRadio(true);
+
             this.ShowMessageConfirm("Uups...", "Uuups, we are in a stalemate! I am very sorry, but nobody won.");
         }
 
@@ -246,11 +261,88 @@ namespace TickTackTo
             }
         }
 
-        private void ChangePlayerNames(object sender, EventArgs e)
+        private void PlayerNamesChanged(object sender, EventArgs e)
         {
             Debug.WriteLine("ChangePlayerNames");
             // just trigger update of player state
             this.SetPlayerState(this.game.CurrentPlayer);
+        }
+
+        /// <summary>
+        /// Return the selected start player.
+        /// 
+        /// If PlayerNull is returned, this means the "random" checkbox is selected.
+        /// </summary>
+        /// <returns>Player</returns>
+        public Player GetStartPlayer()
+        {
+            RadioButton checkedButton = groupStartPlayer.Controls.OfType<RadioButton>()
+                                        .FirstOrDefault(r => r.Checked);
+
+            if (checkedButton == radioStartPlayer1)
+            {
+                return Player.PlayerX;
+            }
+            else if (checkedButton == radioStartPlayer2)
+            {
+                return Player.PlayerO;
+            }
+            else if (checkedButton == radioStartPlayerRandom)
+            {
+                return Player.PlayerNull;
+            }
+
+            throw new InvalidOperationException("could not find selected player");
+        }
+
+        public void SetStartPlayer(Player player)
+        {
+            // remove handler to prevent that it is fired
+            foreach (var radioButton in this.playerRadioButtons)
+            {
+                radioButton.CheckedChanged -= RadioStartPlayerChanged;
+            }
+
+            switch (player)
+            {
+                case Player.PlayerNull:
+                    radioStartPlayerRandom.Checked = true;
+                    break;
+                case Player.PlayerX:
+                    radioStartPlayer1.Checked = true;
+                    break;
+                case Player.PlayerO:
+                    radioStartPlayer2.Checked = true;
+                    break;
+                default:
+                    throw new ArgumentException("invalid player");
+            }
+
+            // reattach handler
+            foreach (var radioButton in this.playerRadioButtons)
+            {
+                radioButton.CheckedChanged += RadioStartPlayerChanged;
+            }
+        }
+
+        public void ChangeStateOfPlayerRadio(bool newState)
+        {
+            groupStartPlayer.Enabled = newState;
+
+            foreach (var radioButton in this.playerRadioButtons)
+            {
+                radioButton.Enabled = newState;
+            }
+        }
+
+        private void RadioStartPlayerChanged(object sender, EventArgs e)
+        {
+            RadioButton radioPlayer = (RadioButton)sender;
+            Debug.WriteLine("Start player button selected: " + radioPlayer.Name);
+
+            // restart game with new startplayer
+            this.game.StartGame(this.GetStartPlayer());
+            this.StartGame(this.game);
         }
     }
 }

@@ -10,9 +10,9 @@ namespace TickTackTo
 {
     public enum Player
     {
-        PlayerNull, // field not played/unspecified player
-        PlayerX,
-        PlayerO
+        PlayerNull = 0, // field not played/unspecified player
+        PlayerX = 1,
+        PlayerO = 2
     }
 
     public class Game
@@ -21,8 +21,9 @@ namespace TickTackTo
 
         private Player[,] Field = new Player[3, 3];
         private GameForm gameWindow;
+        private Random random;
         private int gameFieldsMax;
-        private int gameFieldsUsed;
+        public int GameFieldsUsed { get; protected set; }
 
         /// <summary>
         /// simple constructor
@@ -31,6 +32,7 @@ namespace TickTackTo
         public Game(GameForm gameWindow)
         {
             this.gameWindow = gameWindow;
+            this.random = new Random();
         }
 
         /// <summary>
@@ -38,14 +40,21 @@ namespace TickTackTo
         /// </summary>
         public void StartGame(Player startPlayer)
         {
-            // TODO: random begin
+            // choose random player if needed
+            if (startPlayer == Player.PlayerNull)
+            {
+                int randomPlayer = this.random.Next(1, 3); // random number 1 or 2
+                Debug.WriteLine("Chose random start player: {0}", randomPlayer);
+                startPlayer = (Player)randomPlayer;
+            }
+
             this.CurrentPlayer = startPlayer;
 
             Debug.WriteLine("Started new game with player {0}", this.CurrentPlayer);
 
             // erase player array, so we can start with an empty one, if needed
             this.Field = new Player[3, 3];
-            gameFieldsUsed = 0;
+            GameFieldsUsed = 0;
 
             gameFieldsMax = 3 * 3;
         }
@@ -77,7 +86,7 @@ namespace TickTackTo
             this.Field[pos[0], pos[1]] = this.CurrentPlayer;
 
             // one more field selected
-            gameFieldsUsed++;
+            GameFieldsUsed++;
         }
 
         public void SwitchPlayer()
@@ -122,10 +131,9 @@ namespace TickTackTo
                 default:
                     throw new InvalidOperationException("returned winner status is invalid");
             }
-
             
             // start new game
-            this.StartGame(Program.InitialPlayer);
+            this.StartGame(this.gameWindow.GetStartPlayer());
             this.gameWindow.StartGame(this);
         }
 
@@ -283,7 +291,7 @@ namespace TickTackTo
             }
 
             // if we found no other winner, check whether all fields are full
-            if (result.Winner == null && (gameFieldsUsed == gameFieldsMax))
+            if (result.Winner == null && (GameFieldsUsed == gameFieldsMax))
             {
                 // we have a stalemate here -> PlayerNull won
                 return new GameResult(Player.PlayerNull, null, null, null);

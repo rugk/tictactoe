@@ -10,7 +10,7 @@ namespace TickTackTo
 {
     static class Program
     {
-        public const Player InitialPlayer = Player.PlayerX;
+        private const Player InitialPlayer = Player.PlayerNull;
 
         /// <summary>
         /// The main entry got the application
@@ -26,6 +26,7 @@ namespace TickTackTo
             Debug.WriteLine("Start app.");
 
             Game newGame = new Game(gameWindow);
+            gameWindow.SetStartPlayer(Program.InitialPlayer);
             newGame.StartGame(Program.InitialPlayer);
             gameWindow.StartGame(newGame);
 
