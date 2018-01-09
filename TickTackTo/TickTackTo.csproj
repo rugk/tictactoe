@@ -81,9 +81,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\checked.png" />
-    <Content Include="Resources\checked.svg" />
-    <Content Include="Resources\circle-blue.cur" />
     <Content Include="Resources\circle-blue.png" />
     <Content Include="Resources\circle.cur" />
     <None Include="Resources\cross.cur" />
