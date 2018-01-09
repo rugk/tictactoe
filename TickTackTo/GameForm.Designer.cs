@@ -370,9 +370,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputPlayer2.Location = new System.Drawing.Point(86, 51);
             this.inputPlayer2.Margin = new System.Windows.Forms.Padding(2);
+            this.inputPlayer2.MaxLength = 20;
             this.inputPlayer2.Name = "inputPlayer2";
             this.inputPlayer2.Size = new System.Drawing.Size(92, 20);
-            this.inputPlayer2.TabIndex = 17;
+            this.inputPlayer2.TabIndex = 15;
             this.inputPlayer2.TextChanged += new System.EventHandler(this.PlayerNamesChanged);
             // 
             // player1label
@@ -391,9 +392,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputPlayer1.Location = new System.Drawing.Point(86, 25);
             this.inputPlayer1.Margin = new System.Windows.Forms.Padding(2);
+            this.inputPlayer1.MaxLength = 20;
             this.inputPlayer1.Name = "inputPlayer1";
             this.inputPlayer1.Size = new System.Drawing.Size(92, 20);
-            this.inputPlayer1.TabIndex = 15;
+            this.inputPlayer1.TabIndex = 14;
             this.inputPlayer1.TextChanged += new System.EventHandler(this.PlayerNamesChanged);
             // 
             // GameForm
