@@ -21,7 +21,6 @@ namespace TickTackTo
 
         private Player[,] Field = new Player[3, 3];
         private GameForm gameWindow;
-        private Random random;
         private int gameFieldsMax;
         public int GameFieldsUsed { get; protected set; }
 
@@ -32,23 +31,14 @@ namespace TickTackTo
         public Game(GameForm gameWindow)
         {
             this.gameWindow = gameWindow;
-            this.random = new Random();
         }
 
         /// <summary>
         /// gets into form loop
         /// </summary>
-        public void StartGame(Player startPlayer)
+        public void StartGame()
         {
-            // choose random player if needed
-            if (startPlayer == Player.PlayerNull)
-            {
-                int randomPlayer = this.random.Next(1, 3); // random number 1 or 2
-                Debug.WriteLine("Chose random start player: {0}", randomPlayer);
-                startPlayer = (Player)randomPlayer;
-            }
-
-            this.CurrentPlayer = startPlayer;
+            this.CurrentPlayer = this.gameWindow.GetStartPlayer();
 
             Debug.WriteLine("Started new game with player {0}", this.CurrentPlayer);
 
@@ -133,7 +123,7 @@ namespace TickTackTo
             }
             
             // start new game
-            this.StartGame(this.gameWindow.GetStartPlayer());
+            this.StartGame();
             this.gameWindow.StartGame(this);
         }
 

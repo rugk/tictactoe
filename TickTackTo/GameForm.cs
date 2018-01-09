@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TickTackTo.Properties;
 
 namespace TickTackTo
 {
@@ -206,11 +207,11 @@ namespace TickTackTo
             messageTimeoutTimer.Interval = (3 * 1000); // 3 sec
             messageTimeoutTimer.Tick += (object sender, EventArgs e) =>
             {
+                // stop itself, so only run once
+                ((System.Windows.Forms.Timer) sender).Stop();
                 // hide text
                 bigMessageLabel.Text = "";
             };
-
-
             // Set text.
             bigMessageLabel.Text = formattedString;
 
@@ -270,8 +271,6 @@ namespace TickTackTo
 
         /// <summary>
         /// Return the selected start player.
-        /// 
-        /// If PlayerNull is returned, this means the "random" checkbox is selected.
         /// </summary>
         /// <returns>Player</returns>
         public Player GetStartPlayer()
@@ -287,14 +286,14 @@ namespace TickTackTo
             {
                 return Player.PlayerO;
             }
-            else if (checkedButton == radioStartPlayerRandom)
-            {
-                return Player.PlayerNull;
-            }
 
             throw new InvalidOperationException("could not find selected player");
         }
 
+        /// <summary>
+        /// Sets a player. If PlayerNull is given, it chooses a random start player.
+        /// </summary>
+        /// <param name="player"></param>
         public void SetStartPlayer(Player player)
         {
             // remove handler to prevent that it is fired
@@ -305,14 +304,19 @@ namespace TickTackTo
 
             switch (player)
             {
-                case Player.PlayerNull:
-                    radioStartPlayerRandom.Checked = true;
-                    break;
                 case Player.PlayerX:
                     radioStartPlayer1.Checked = true;
                     break;
                 case Player.PlayerO:
                     radioStartPlayer2.Checked = true;
+                    break;
+                case Player.PlayerNull:
+                    // choose random player if needed
+                    int randomPlayer = Program.Random.Next(1, 3); // random number 1 or 2
+                    Debug.WriteLine("Chose random start player: {0}", randomPlayer);
+
+                    // run itself again with choosen startplayer value
+                    this.SetStartPlayer((Player)randomPlayer);
                     break;
                 default:
                     throw new ArgumentException("invalid player");
@@ -328,21 +332,52 @@ namespace TickTackTo
         public void ChangeStateOfPlayerRadio(bool newState)
         {
             groupStartPlayer.Enabled = newState;
-
-            foreach (var radioButton in this.playerRadioButtons)
-            {
-                radioButton.Enabled = newState;
-            }
         }
 
         private void RadioStartPlayerChanged(object sender, EventArgs e)
         {
-            RadioButton radioPlayer = (RadioButton)sender;
-            Debug.WriteLine("Start player button selected: " + radioPlayer.Name);
-
             // restart game with new startplayer
-            this.game.StartGame(this.GetStartPlayer());
+            this.game.StartGame();
             this.StartGame(this.game);
+        }
+
+        private void ButtonRandomStartPlayerChanged(object sender, EventArgs e)
+        {
+            this.SetStartPlayer(Player.PlayerNull);
+
+            // disable button for some time to give feedback to the user that the choosing happened
+            Timer buttonTimeoutTimer = new Timer();
+            buttonTimeoutTimer.Interval = 750;
+
+            // enable visual effects
+            buttonRandomStartPlayer.Enabled = false;
+            switch (this.GetStartPlayer())
+            {
+                case Player.PlayerX:
+                    radioStartPlayer1.ForeColor = System.Drawing.Color.Red;
+                    break;
+                case Player.PlayerO:
+                    radioStartPlayer2.ForeColor = System.Drawing.Color.Red;
+                    break;
+            }
+
+            // define function to disable them and start Timer
+            buttonTimeoutTimer.Tick += (object senderTimer, EventArgs eTimer) =>
+            {
+                // stop itself, so only run once
+                ((System.Windows.Forms.Timer)senderTimer).Stop();
+
+                // disable visual effects
+                buttonRandomStartPlayer.Enabled = true;
+                foreach (var radioButton in this.playerRadioButtons)
+                {
+                    radioButton.ForeColor = System.Drawing.SystemColors.ControlText;
+                }
+            };
+            buttonTimeoutTimer.Start();
+
+            // manually trigger change event as it is disabled in SetStartPlayer()
+            RadioStartPlayerChanged(sender, e);
         }
     }
 }
