@@ -265,7 +265,12 @@ namespace TickTackTo
         private void PlayerNamesChanged(object sender, EventArgs e)
         {
             Debug.WriteLine("ChangePlayerNames");
-            // just trigger update of player state
+
+            // update radio buttons
+            radioStartPlayer1.Text = Program.FirstLetterToUpper(this.GetNameOfPlayer(Player.PlayerX));
+            radioStartPlayer2.Text = Program.FirstLetterToUpper(this.GetNameOfPlayer(Player.PlayerO));
+
+            // trigger update of player state
             this.SetPlayerState(this.game.CurrentPlayer);
         }
 
