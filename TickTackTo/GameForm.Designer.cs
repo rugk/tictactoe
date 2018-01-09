@@ -259,6 +259,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupStartPlayer);
             this.splitContainer1.Panel2.Controls.Add(this.bigMessageLabel);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.splitContainer1.Size = new System.Drawing.Size(660, 410);
             this.splitContainer1.SplitterDistance = 459;
             this.splitContainer1.SplitterWidth = 3;
@@ -270,9 +271,9 @@
             this.groupStartPlayer.Controls.Add(this.radioStartPlayer2);
             this.groupStartPlayer.Controls.Add(this.radioStartPlayer1);
             this.groupStartPlayer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupStartPlayer.Location = new System.Drawing.Point(0, 86);
+            this.groupStartPlayer.Location = new System.Drawing.Point(5, 91);
             this.groupStartPlayer.Name = "groupStartPlayer";
-            this.groupStartPlayer.Size = new System.Drawing.Size(196, 74);
+            this.groupStartPlayer.Size = new System.Drawing.Size(186, 74);
             this.groupStartPlayer.TabIndex = 5;
             this.groupStartPlayer.TabStop = false;
             this.groupStartPlayer.Text = "Start player";
@@ -334,11 +335,9 @@
             this.groupBox1.Controls.Add(this.player1label);
             this.groupBox1.Controls.Add(this.inputPlayer1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(196, 86);
+            this.groupBox1.Size = new System.Drawing.Size(186, 86);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Player configuration";
@@ -357,7 +356,7 @@
             // player2label
             // 
             this.player2label.AutoSize = true;
-            this.player2label.Location = new System.Drawing.Point(16, 53);
+            this.player2label.Location = new System.Drawing.Point(17, 54);
             this.player2label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.player2label.Name = "player2label";
             this.player2label.Size = new System.Drawing.Size(65, 13);
@@ -368,18 +367,18 @@
             // 
             this.inputPlayer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputPlayer2.Location = new System.Drawing.Point(86, 51);
+            this.inputPlayer2.Location = new System.Drawing.Point(87, 52);
             this.inputPlayer2.Margin = new System.Windows.Forms.Padding(2);
             this.inputPlayer2.MaxLength = 20;
             this.inputPlayer2.Name = "inputPlayer2";
-            this.inputPlayer2.Size = new System.Drawing.Size(92, 20);
+            this.inputPlayer2.Size = new System.Drawing.Size(90, 20);
             this.inputPlayer2.TabIndex = 15;
             this.inputPlayer2.TextChanged += new System.EventHandler(this.PlayerNamesChanged);
             // 
             // player1label
             // 
             this.player1label.AutoSize = true;
-            this.player1label.Location = new System.Drawing.Point(16, 27);
+            this.player1label.Location = new System.Drawing.Point(17, 28);
             this.player1label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.player1label.Name = "player1label";
             this.player1label.Size = new System.Drawing.Size(64, 13);
@@ -390,11 +389,11 @@
             // 
             this.inputPlayer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputPlayer1.Location = new System.Drawing.Point(86, 25);
+            this.inputPlayer1.Location = new System.Drawing.Point(87, 26);
             this.inputPlayer1.Margin = new System.Windows.Forms.Padding(2);
             this.inputPlayer1.MaxLength = 20;
             this.inputPlayer1.Name = "inputPlayer1";
-            this.inputPlayer1.Size = new System.Drawing.Size(92, 20);
+            this.inputPlayer1.Size = new System.Drawing.Size(90, 20);
             this.inputPlayer1.TabIndex = 14;
             this.inputPlayer1.TextChanged += new System.EventHandler(this.PlayerNamesChanged);
             // 
