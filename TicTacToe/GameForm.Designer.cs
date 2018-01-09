@@ -1,4 +1,4 @@
-﻿namespace TickTackTo
+﻿namespace TicTacToe
 {
     partial class GameForm
     {
@@ -407,7 +407,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(566, 414);
             this.Name = "GameForm";
-            this.Text = "TickTackTo";
+            this.Text = "TicTacToe";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

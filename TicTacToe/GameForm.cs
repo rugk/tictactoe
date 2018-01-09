@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TickTackTo.Properties;
+using TicTacToe.Properties;
 
-namespace TickTackTo
+namespace TicTacToe
 {
     public partial class GameForm : Form
     {
