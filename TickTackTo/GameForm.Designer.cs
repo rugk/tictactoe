@@ -42,7 +42,7 @@
             this.pic12 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupStartPlayer = new System.Windows.Forms.GroupBox();
-            this.radioStartPlayerRandom = new System.Windows.Forms.RadioButton();
+            this.buttonRandomStartPlayer = new System.Windows.Forms.Button();
             this.radioStartPlayer2 = new System.Windows.Forms.RadioButton();
             this.radioStartPlayer1 = new System.Windows.Forms.RadioButton();
             this.bigMessageLabel = new System.Windows.Forms.Label();
@@ -266,7 +266,7 @@
             // 
             // groupStartPlayer
             // 
-            this.groupStartPlayer.Controls.Add(this.radioStartPlayerRandom);
+            this.groupStartPlayer.Controls.Add(this.buttonRandomStartPlayer);
             this.groupStartPlayer.Controls.Add(this.radioStartPlayer2);
             this.groupStartPlayer.Controls.Add(this.radioStartPlayer1);
             this.groupStartPlayer.Dock = System.Windows.Forms.DockStyle.Top;
@@ -277,17 +277,15 @@
             this.groupStartPlayer.TabStop = false;
             this.groupStartPlayer.Text = "Start player";
             // 
-            // radioStartPlayerRandom
+            // buttonRandomStartPlayer
             // 
-            this.radioStartPlayerRandom.AutoSize = true;
-            this.radioStartPlayerRandom.Location = new System.Drawing.Point(88, 19);
-            this.radioStartPlayerRandom.Name = "radioStartPlayerRandom";
-            this.radioStartPlayerRandom.Size = new System.Drawing.Size(65, 17);
-            this.radioStartPlayerRandom.TabIndex = 2;
-            this.radioStartPlayerRandom.TabStop = true;
-            this.radioStartPlayerRandom.Text = "Random";
-            this.radioStartPlayerRandom.UseVisualStyleBackColor = true;
-            this.radioStartPlayerRandom.CheckedChanged += new System.EventHandler(this.RadioStartPlayerChanged);
+            this.buttonRandomStartPlayer.Location = new System.Drawing.Point(103, 37);
+            this.buttonRandomStartPlayer.Name = "buttonRandomStartPlayer";
+            this.buttonRandomStartPlayer.Size = new System.Drawing.Size(75, 23);
+            this.buttonRandomStartPlayer.TabIndex = 2;
+            this.buttonRandomStartPlayer.Text = "Random";
+            this.buttonRandomStartPlayer.UseVisualStyleBackColor = true;
+            this.buttonRandomStartPlayer.Click += new System.EventHandler(this.ButtonRandomStartPlayerChanged);
             // 
             // radioStartPlayer2
             // 
@@ -451,9 +449,9 @@
         private System.Windows.Forms.Label player1label;
         private System.Windows.Forms.TextBox inputPlayer1;
         private System.Windows.Forms.GroupBox groupStartPlayer;
-        private System.Windows.Forms.RadioButton radioStartPlayerRandom;
         private System.Windows.Forms.RadioButton radioStartPlayer2;
         private System.Windows.Forms.RadioButton radioStartPlayer1;
+        private System.Windows.Forms.Button buttonRandomStartPlayer;
     }
 }
 

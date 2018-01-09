@@ -11,23 +11,26 @@ namespace TickTackTo
     static class Program
     {
         private const Player InitialPlayer = Player.PlayerNull;
+        public static Random Random { get; set; }
 
         /// <summary>
         /// The main entry got the application
         /// </summary>
         static void Main()
         {
+            Program.Random = new Random();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             // create window
             GameForm gameWindow = new GameForm();
+            gameWindow.SetStartPlayer(Program.InitialPlayer);
 
             Debug.WriteLine("Start app.");
 
             Game newGame = new Game(gameWindow);
-            gameWindow.SetStartPlayer(Program.InitialPlayer);
-            newGame.StartGame(Program.InitialPlayer);
+            newGame.StartGame();
             gameWindow.StartGame(newGame);
 
             // show form
