@@ -10,6 +10,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 The images for circle and cross (player 1 and player 2) are based on images from https://openclipart.org/, licensed under CC0.
 
-Cross: https://openclipart.org/detail/11118/check-sign-and-cross-sign by @jetxee
+Cross: https://openclipart.org/detail/11118/check-sign-and-cross-sign by @jetxee  
 Circle: https://openclipart.org/detail/169414/circle by @bitterjug
 
